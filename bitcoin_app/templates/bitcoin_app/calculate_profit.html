@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcular Ganancias de Bitcoin</title>
+</head>
+<body>
+    <h1>Calcular Ganancias de Bitcoin</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Calcular">
+    </form>
+
+    {% if profit is not None %}
+    <h2>Resultado:</h2>
+    <p>Ganancias: {{ profit }}%</p>
+    {% endif %}
+</body>
+</html>
